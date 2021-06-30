@@ -14,8 +14,10 @@
 //to use 'props', you must have it defined in your attributes.
 // for example in App.js, it is defined as title={expenses[0].title}
 import ExpenseDate from './ExpenseDate';
+import Card from './Card';
 // we used "./" when we're looking for a file in the same folder.
 import './ExpenseItem.css';
+
 
 
 function ExpenseItem(props) {
@@ -23,13 +25,13 @@ function ExpenseItem(props) {
   // if there is no content between the component tag, you can just do <ExpenseDate />
 
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
     <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 
